@@ -4,7 +4,6 @@
 import requests
 
 def lookUp(userChoice):
-
     pokeapi = requests.get(f"https://pokeapi.co/api/v2/pokemon/{userChoice}").json()
 
     print("name : ",pokeapi["species"]["name"])
@@ -16,7 +15,6 @@ def lookUp(userChoice):
         pokeMoves.append(dict["move"]["name"])
 
     print("here is a list of its moves: ", pokeMoves)
-
 
 def main():
     print("This is a pokemon search tool")
@@ -33,5 +31,5 @@ def main():
         except ValueError:
             print("invalid entry not a number")
 
-
-main()
+if __name__ == '__main__':
+    main()
